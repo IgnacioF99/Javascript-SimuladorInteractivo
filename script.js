@@ -24,11 +24,63 @@ let peso;
 let altura;
 
 function obtenerDatos() {
-  edad = parseInt(prompt("Ingrese su edad:"));
-  peso = parseFloat(prompt("Ingrese su peso en Kg:"));
-  altura = parseFloat(prompt("Ingrese su altura en metros:"));
+  edad = obtenerEdad();
+  peso = obtenerPeso();
+  altura = obtenerAltura();
   let resultado = calcularSalud(edad, peso, altura);
   alert(resultado);
   console.log(resultado);
 }
+
+function obtenerEdad() {
+  // edad = parseInt(prompt("Ingrese su edad:"));
+  // if (isNaN(edad) || edad < 0 || edad > 120) {
+  //   alert("Edad inválida. Por favor, ingrese un número válido.");
+  //   obtenerEdad();
+  // } else {
+  //   return edad;
+  // }
+  do {
+    edad = parseInt(prompt("Ingrese su edad:"));
+    if (isNaN(edad) || edad < 0 || edad > 120) {
+      alert("Edad inválida. Por favor, ingrese un número válido.");
+    }
+  } while (isNaN(edad) || edad < 0 || edad > 120);
+  return edad;
+}
+
+function obtenerPeso() {
+  // peso = parseFloat(prompt("Ingrese su peso en Kg:"));
+  // if (isNaN(peso) || peso <= 0) {
+  //   alert("Peso inválido. Por favor, ingrese un número válido.");
+  //   obtenerPeso();
+  // } else {
+  //   return peso;
+  // }
+  do {
+    peso = parseFloat(prompt("Ingrese su peso en Kg:"));
+    if (isNaN(peso) || peso <= 0) {
+      alert("Peso inválido. Por favor, ingrese un número válido.");
+    }
+  } while (isNaN(peso) || peso <= 0);
+  return peso;
+}
+
+function obtenerAltura() {
+  // altura = parseFloat(prompt("Ingrese su altura en metros:"));
+  // if (isNaN(altura) || altura <= 0 || altura > 3) {
+  //   alert("Altura inválida. Por favor, ingrese un número válido.");
+  //   obtenerAltura();
+  // } else {
+  //   return altura;
+  // }
+  do {
+    altura = parseFloat(prompt("Ingrese su altura en metros:"));
+    if (isNaN(altura) || altura <= 0 || altura > 3) {
+      alert("Altura inválida. Por favor, ingrese un número válido.");
+    }
+  } while (isNaN(altura) || altura <= 0 || altura > 3);
+  return altura;
+}
+
 obtenerDatos();
